@@ -1,0 +1,30 @@
+{
+  "name": "tawn-cli",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "bin": {
+    "tawn": "dist/index.js"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && bun build src/index.ts --target=node --format=esm --sourcemap --outdir=dist --entry-naming=index.js && node -e \"const fs=require('fs');const cp=require('child_process');const p='dist/index.js';const c=fs.readFileSync(p,'utf8');if(!c.startsWith('#!/usr/bin/env node')){fs.writeFileSync(p,'#!/usr/bin/env node\\n'+c)};fs.chmodSync(p,0o755);cp.execSync('mkdir -p dist/sounds && cp -R src/sounds/* dist/sounds || true');\"",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20",
+    "@types/play-sound": "^1.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "play-sound": "^1.1.6"
+  }
+}
