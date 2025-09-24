@@ -13,10 +13,10 @@ Run any command and play a cross-platform notification sound when it finishes.
 - Node.js >= 18 (runtime for the CLI)
 - Bun (to build from source)
 
-### Install (with Bun)
+### Installation
 
 ```bash
-bun add --global tawn-cli
+npm install -g tawn-cli
 ```
 
 This installs the `tawn` binary globally.
