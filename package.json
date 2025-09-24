@@ -2,7 +2,7 @@
   "name": "tawn-cli",
   "description": "Run any command and play a cross-platform notification sound when it finishes.",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "bin": {
     "tawn": "dist/index.js"
